@@ -1,4 +1,4 @@
-var mongoose = require("mongoose");
+var mongoose = require('mongoose');
 
 var placeSchema = new mongoose.Schema({
   location: String,
@@ -50,6 +50,6 @@ var placeSchema = new mongoose.Schema({
   }]
 });
 
-var Place = mongoose.model("Place", placeSchema);
+var Place = mongoose.model('Place', placeSchema);
 
 module.exports = Place;

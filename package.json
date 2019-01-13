@@ -11,14 +11,13 @@
   "keywords": [
     "javascript",
     "node",
-    "v8",
     "climbing",
     "weather"
   ],
   "contributors": [
     "Trentin Gillis",
     "Chris Poitras",
-    "Luke Danialson"
+    "Luke Danielson"
   ],
   "license": "ISC",
   "dependencies": {
