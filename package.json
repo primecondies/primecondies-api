@@ -1,6 +1,6 @@
 {
   "name": "primecondies",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "An app to make tracking weather at climbing areas easy",
   "main": "app.js",
   "scripts": {
