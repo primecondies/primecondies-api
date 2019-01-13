@@ -32,6 +32,13 @@ userSchema.pre('save', function(done) {
   });
 });
 
+// Compare password guess against hashed password stored in database
+userSchema.methods.checkPassword = function(passwordGuess, done) {
+  bcrypt.compare(passwordGuess, this.password, (err, isMatch) => {
+    done(err, isMatch);
+  });
+};
+
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
