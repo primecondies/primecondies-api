@@ -1,22 +1,26 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const router = require("../src/api/routes");
+const express = require('express');
+const mongoose = require('mongoose');
+const passport = require('passport');
+const router = require('../src/api/routes');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 // Connect to mongoDB database
-mongoose.connect("mongodb://localhost:27017/primecondies-test", { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/primecondies-test', { useNewUrlParser: true });
+
+// Initialize passport
+app.use(passport.initialize());
 
 // Use the api router for api requests
-app.use("/", router);
+app.use('/api', router);
 
 // Handle errors
 app.use((req, res) => {
   res.status(404);
   res.json({ 
-    statusCode: "404",
-    message: "Resource not found" 
+    statusCode: '404',
+    message: 'Resource not found' 
   });
 });
 

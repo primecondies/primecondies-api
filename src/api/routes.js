@@ -1,5 +1,6 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
+const auth = require('../config/passport');
 
 
 router.get("/", (req, res) => {
@@ -8,14 +9,14 @@ router.get("/", (req, res) => {
   });
 });
 
-/** places routes */
-const getPlaces = require("./places/places.get");
-router.route("/places")
+/* Places Routes */
+const getPlaces = require('./places/places.get');
+router.route('/places')
   .get(getPlaces);
 
-/* place routes */
-const getPlace = require("./place/place.get");
-router.route("/place")
+/* Place Routes */
+const getPlace = require('./place/place.get');
+router.route('/place')
   .get(getPlace);
 
 
