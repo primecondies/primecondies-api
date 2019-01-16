@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 const router = require("../src/api/routes");
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
-// Connect to and seed database
+// Connect to mongoDB database
 mongoose.connect("mongodb://localhost:27017/primecondies-test", { useNewUrlParser: true });
 
 // Use the api router for api requests
