@@ -7,7 +7,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Connect to mongoDB database
-mongoose.connect('mongodb://localhost:27017/primecondies-test', { useNewUrlParser: true });
+mongoose.connect('mongodb://mongo:27017/primecondies-test', { useNewUrlParser: true });
 
 // Initialize passport
 app.use(passport.initialize());

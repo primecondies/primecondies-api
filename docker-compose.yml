@@ -1,0 +1,20 @@
+version: "3.3"
+
+services:
+  pc-api:
+    container_name: pc-api
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    command: [ "nodemon", "src/app.js" ]
+    volumes:
+      - .:/pc-api
+    depends_on:
+      - mongo
+  
+  mongo:
+    container_name: pc-mongo
+    image: mongo
+    ports:
+      - "27017:27017"
