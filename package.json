@@ -4,9 +4,9 @@
   "description": "An app to make tracking weather at climbing areas easy",
   "main": "app.js",
   "scripts": {
-    "start": "node src/app",
-    "dev": "nodemon src/app",
-    "test": "mocha --recursive --exit"
+    "start": "NODE_ENV=development node src/app",
+    "dev": "NODE_ENV=development nodemon src/app",
+    "test": "NODE_ENV=testing mocha --recursive --exit"
   },
   "keywords": [
     "javascript",
