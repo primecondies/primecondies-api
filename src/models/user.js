@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const saltRounds = 10;
 
@@ -17,7 +17,7 @@ const userSchema = mongoose.Schema({
 
 // Hash users password before adding to database
 userSchema.pre('save', function(done) {
-  var user = this; // reference to user
+  var user = this; // reference to current user
 
   // only hash password if it is new or has been modified
   if (!user.isModified('password')) { return done(); }

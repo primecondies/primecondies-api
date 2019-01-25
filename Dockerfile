@@ -6,10 +6,8 @@ WORKDIR /pc-api
 # Install app dependencies
 COPY package*.json ./
 
-RUN apk update && apk upgrade \
-  && apk --no-cache add --virtual builds-deps build-base python \
-	&& npm install -g nodemon && npm install \
-	&& npm rebuild bcrypt --build-from-source
+RUN npm install -g nodemon \
+		npm install
 
 # Bundle source code inside of docker container
 COPY . .
