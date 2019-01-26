@@ -1,13 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
+const config = require('./config/config');
 const router = require('../src/api/routes');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = config.api.port || 3000;
 
-// Connect to mongoDB database
-mongoose.connect('mongodb://mongo:27017/primecondies-test', { useNewUrlParser: true });
+// Initialze mongodb database
+config.mongo.init();
 
 // Initialize passport
 app.use(passport.initialize());

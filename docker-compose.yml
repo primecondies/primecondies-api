@@ -7,7 +7,7 @@ services:
       context: .
     ports:
       - "3000:3000"
-    command: [ "nodemon", "src/app.js" ]
+    command: [ 'npm', 'run', 'dev' ]
     volumes:
       - .:/pc-api
     depends_on:
@@ -17,4 +17,4 @@ services:
     container_name: pc-mongo
     image: mongo
     ports:
-      - "27017:27017"
+      - "27000:27017"
