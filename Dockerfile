@@ -1,16 +1,14 @@
-FROM node:11.6.0-alpine
+FROM node:11.6.0
 
 # Create app directory
-WORKDIR /pc-api
+WORKDIR /usr/src/pc-api
 
 # Install app dependencies
 COPY package*.json ./
+RUN npm install
 
-RUN npm install -g nodemon \
-		npm install
-
-# Bundle source code inside of docker container
+# Bundle app source
 COPY . .
 
-EXPOSE 3000
-CMD npm start
+EXPOSE 8080
+CMD [ "npm", "start" ]
